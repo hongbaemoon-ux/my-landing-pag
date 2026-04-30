@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문홍배 | 금융 컨설턴트</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary:     #1a3a5c;
+      --primary-mid: #2d5a8b;
+      --accent:      #b8963e;
+      --bg:          #f4f6f9;
+      --surface:     #ffffff;
+      --text:        #1e2d3d;
+      --text-muted:  #64748b;
+      --border:      #dde3ec;
+      --sans:        'Noto Sans KR', sans-serif;
+      --serif:       'Noto Serif KR', serif;
+      --wrap:        1100px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+      opacity: 0;
+      animation: pageIn 0.7s ease forwards;
+    }
+
+    @keyframes pageIn { to { opacity: 1; } }
+
+    .wrap {
+      max-width: var(--wrap);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── 공통 섹션 ─────────────────────────── */
+    section { padding: 64px 0; }
+
+    .sec-title {
+      font-family: var(--serif);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 36px;
+    }
+
+    /* ── HERO ───────────────────────────────── */
+    #hero {
+      background: var(--primary);
+      color: #fff;
+      padding: 80px 0 72px;
+    }
+
+    .hero-name-en {
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 6px;
+    }
+
+    .hero-name-ko {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+
+    .hero-titles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge {
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 6px 18px;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 99px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .hero-slogan {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 40px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ── 버튼 ────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 4px;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 0.18s;
+    }
+    .btn:hover { opacity: 0.82; }
+
+    .btn-gold {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.55);
+    }
+
+    /* ── SERVICES ───────────────────────────── */
+    #services { background: var(--surface); }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .svc-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 22px;
+      background: var(--surface);
+    }
+
+    .svc-card-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      border-radius: 6px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .svc-card-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .svc-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .svc-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* ── STATS ──────────────────────────────── */
+    #stats { background: var(--bg); }
+
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      padding: 28px 32px;
+      min-width: 220px;
+    }
+
+    .stat-num {
+      font-family: var(--serif);
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .stat-num-26 { font-size: 26px; }
+    .stat-num-20 { font-size: 20px; }
+
+    .stat-label {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* ── CAREER ─────────────────────────────── */
+    #career { background: var(--surface); }
+
+    .career-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .career-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 22px 18px;
+    }
+
+    .career-role {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .career-period {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .career-desc {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    /* ── TRACK RECORD ───────────────────────── */
+    #track-record { background: var(--bg); }
+
+    .track-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .track-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .track-tag {
+      flex-shrink: 0;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--primary);
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: 4px;
+      min-width: 82px;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    .track-content {
+      font-size: 0.93rem;
+      color: var(--text);
+    }
+
+    /* ── ACTIVITIES ─────────────────────────── */
+    #activities { background: var(--surface); }
+
+    .activities-cols {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    .act-group-title {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .act-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .act-list li {
+      font-size: 0.88rem;
+      color: var(--text);
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .act-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* ── EDUCATION ──────────────────────────── */
+    #education { background: var(--bg); }
+
+    .edu-cols {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    .edu-sub {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .edu-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .edu-school {
+      font-weight: 700;
+      font-size: 0.93rem;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .edu-detail {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .cert-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .cert-list li {
+      font-size: 0.9rem;
+      padding: 11px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text);
+    }
+
+    /* ── CONTACT ─────────────────────────────── */
+    #contact {
+      background: var(--primary);
+      text-align: center;
+      padding: 72px 0;
+    }
+
+    #contact .sec-title {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .contact-sub {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.93rem;
+      margin-bottom: 36px;
+    }
+
+    .contact-btns {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    /* ── 반응형 ─────────────────────────────── */
+    @media (max-width: 900px) {
+      .cards-3    { grid-template-columns: 1fr 1fr; }
+      .career-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-name-ko  { font-size: 2rem; }
+      .hero-slogan   { font-size: 1rem; }
+      .cards-3       { grid-template-columns: 1fr; }
+      .career-grid   { grid-template-columns: 1fr 1fr; }
+      .activities-cols { grid-template-columns: 1fr; gap: 28px; }
+      .edu-cols      { grid-template-columns: 1fr; gap: 32px; }
+      .track-item    { flex-direction: column; gap: 6px; }
+    }
+
+    @media (max-width: 420px) {
+      .career-grid { grid-template-columns: 1fr; }
+      .stat-card   { min-width: unset; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ① HERO -->
+  <section id="hero">
+    <div class="wrap">
+      <p class="hero-name-en">Moon Hong Bae</p>
+      <h1 class="hero-name-ko">문홍배</h1>
+      <div class="hero-titles">
+        <span class="hero-badge">치원컨설팅 대표</span>
+        <span class="hero-badge">상상우리 AI컨설턴트</span>
+      </div>
+      <p class="hero-slogan">금융 35년, M&amp;A와 전략의 깊이를 더하다</p>
+      <div class="hero-cta">
+        <a href="mailto:hbmoon21@gmail.com" class="btn btn-gold">이메일 보내기</a>
+        <a href="tel:010-2098-9358"          class="btn btn-ghost">전화 연결</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ② SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <h2 class="sec-title">서비스</h2>
+      <div class="cards-3">
+
+        <div class="svc-card">
+          <div class="svc-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 class="svc-title">M&amp;A 자문</h3>
+          <p class="svc-desc">매각·매수 자문, 인수금융 주선, 딜 구조설계</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 class="svc-title">창업 컨설팅</h3>
+          <p class="svc-desc">사업계획서 작성, 법인 설립, 인증</p>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          </div>
+          <h3 class="svc-title">기타</h3>
+          <p class="svc-desc">자금조달, 수출, 소상공인</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ③ STATS -->
+  <section id="stats">
+    <div class="wrap">
+      <h2 class="sec-title">경력 요약</h2>
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-num stat-num-26">35년</div>
+          <div class="stat-label">금융 경력</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num stat-num-20">17년</div>
+          <div class="stat-label">M&amp;A · 전략 · 구조조정</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ CAREER -->
+  <section id="career">
+    <div class="wrap">
+      <h2 class="sec-title">산업은행 커리어</h2>
+      <div class="career-grid">
+
+        <div class="career-card">
+          <div class="career-role">기업금융</div>
+          <div class="career-period">6년</div>
+          <div class="career-desc">대기업·중소기업</div>
+        </div>
+
+        <div class="career-card">
+          <div class="career-role">조사 분석</div>
+          <div class="career-period">6년</div>
+          <div class="career-desc">경제·산업·자본시장</div>
+        </div>
+
+        <div class="career-card">
+          <div class="career-role">M&amp;A·구조조정</div>
+          <div class="career-period">11년</div>
+          <div class="career-desc">자문·인수금융주선</div>
+        </div>
+
+        <div class="career-card">
+          <div class="career-role">경영전략</div>
+          <div class="career-period">6년</div>
+          <div class="career-desc">그룹전략·자회사관리</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑤ TRACK RECORD -->
+  <section id="track-record">
+    <div class="wrap">
+      <h2 class="sec-title">주요 실적</h2>
+      <div class="track-list">
+
+        <div class="track-item">
+          <span class="track-tag">매각자문</span>
+          <span class="track-content">금호타이어, LG증권, 대우증권, 현대시멘트 등</span>
+        </div>
+
+        <div class="track-item">
+          <span class="track-tag">매수자문</span>
+          <span class="track-content">한라시멘트, 한국티타늄 등</span>
+        </div>
+
+        <div class="track-item">
+          <span class="track-tag">구조조정</span>
+          <span class="track-content">지주회사 설립, 구조조정기업 자금관리단장</span>
+        </div>
+
+        <div class="track-item">
+          <span class="track-tag">연구·논문</span>
+          <span class="track-content">R&amp;D 효과, 산업내 무역, 수익률곡선, 자본구조, 금융지주회사 등</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥ ACTIVITIES -->
+  <section id="activities">
+    <div class="wrap">
+      <h2 class="sec-title">대외활동</h2>
+      <div class="activities-cols">
+
+        <div>
+          <div class="act-group-title">現 현재</div>
+          <ul class="act-list">
+            <li>관악중소벤처진흥원 자문위원</li>
+            <li>서울경제진흥원 평가위원</li>
+            <li>경상북도경제진흥원 평가위원</li>
+            <li>전남으뜸창업 멘토</li>
+            <li>춘천시 기업유치위원회 위원</li>
+            <li>대전신보 컨설턴트</li>
+            <li>한국핀테크지원센터 멘토</li>
+            <li>서울연구원 서울RISE사업 평가위원</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="act-group-title">前 이전</div>
+          <ul class="act-list">
+            <li>코스닥시장본부 자문위원</li>
+            <li>한국전자기술연구원 평가위원</li>
+            <li>부산시, 대전시, 광명시, 광양시, 서울주택도시공사 평가위원</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑦ EDUCATION -->
+  <section id="education">
+    <div class="wrap">
+      <h2 class="sec-title">학력 및 자격증</h2>
+      <div class="edu-cols">
+
+        <div>
+          <div class="edu-sub">학력</div>
+          <ul class="edu-list">
+            <li>
+              <div class="edu-school">성균관대학교</div>
+              <div class="edu-detail">경제학 · 학사</div>
+            </li>
+            <li>
+              <div class="edu-school">City University (영국)</div>
+              <div class="edu-detail">Finance · MSc 석사</div>
+            </li>
+            <li>
+              <div class="edu-school">성균관대학교 경영학</div>
+              <div class="edu-detail">재무관리 · 박사과정 수료</div>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="edu-sub">자격증</div>
+          <ul class="cert-list">
+            <li>경영지도사</li>
+            <li>창업보육전문매니저</li>
+            <li>회생기업경영관리사</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑧ CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <h2 class="sec-title">연락하기</h2>
+      <p class="contact-sub">M&amp;A · 전략 · 창업 컨설팅 문의를 환영합니다.</p>
+      <div class="contact-btns">
+        <a href="mailto:hbmoon21@gmail.com" class="btn btn-gold">hbmoon21@gmail.com</a>
+        <a href="tel:010-2098-9358"          class="btn btn-ghost">010-2098-9358</a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
