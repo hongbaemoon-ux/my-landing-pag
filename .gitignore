@@ -1,19 +1,14 @@
+# 테스트용 스크린샷
+desktop-full.png
+hero-with-photo.png
+mobile-full.png
+mobile-*.png
+
 # OS
 .DS_Store
 Thumbs.db
-desktop.ini
 
 # Editor
 .vscode/
 .idea/
 *.swp
-*.swo
-
-# Playwright
-.playwright-mcp/
-
-# Logs
-*.log
-
-# Test screenshots
-mobile-*.png
