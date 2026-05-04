@@ -3,6 +3,12 @@ desktop-full.png
 hero-with-photo.png
 mobile-full.png
 mobile-*.png
+preview-desktop.png
+preview-mobile.png
+
+# Claude Code / Playwright MCP
+.claude/
+.playwright-mcp/
 
 # OS
 .DS_Store
