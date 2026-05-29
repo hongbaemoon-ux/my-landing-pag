@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -12,27 +12,27 @@
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Noto Sans KR', sans-serif;
-    color: #1a1a1a;
-    background: #fff;
+    color: #1e293b;
+    background: #fafaf9;
     line-height: 1.7;
     animation: fadeIn 0.8s ease-in-out;
   }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
-  h1, h2, h3, h4 { font-family: 'Noto Serif KR', serif; }
+  h1, h2, h3, h4 { font-family: 'Noto Serif KR', serif; font-weight: 700; color: #0f172a; }
 
   .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
 
   /* ── HERO ── */
   .hero {
-    background: #f8f8f5;
-    border-bottom: 1px solid #e5e5e0;
-    padding: 64px 0 56px;
+    background: #f5f5f0;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 80px 0 72px;
   }
   .hero-inner {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 40px;
   }
   .hero-avatar {
     flex-shrink: 0;
@@ -41,115 +41,127 @@
     border-radius: 50%;
     object-fit: cover;
     object-position: center top;
-    border: 2px solid #d0cec8;
+    border: 3px solid #cbd5e1;
   }
   .hero-text { flex: 1; }
   .hero-name-kr {
     font-family: 'Noto Serif KR', serif;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 700;
     letter-spacing: -0.5px;
-    color: #111;
+    color: #0f172a;
   }
   .hero-name-en {
-    font-size: 14px;
-    color: #888;
-    margin-top: 2px;
+    font-size: 15px;
+    color: #64748b;
+    margin-top: 4px;
     letter-spacing: 0.5px;
   }
   .hero-titles {
-    margin-top: 10px;
+    margin-top: 16px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
+    flex-direction: column;
+    gap: 8px;
   }
-  .hero-title-badge {
-    display: inline-block;
-    font-size: 13px;
-    font-weight: 500;
-    color: #4a4a4a;
-    background: #eeede8;
-    border-radius: 4px;
-    padding: 3px 10px;
+  .hero-title-item {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #334155;
+    line-height: 1.3;
   }
   .hero-slogan {
-    margin-top: 14px;
-    font-size: 15px;
-    color: #333;
+    margin-top: 18px;
+    font-size: 16px;
+    color: #475569;
     font-weight: 400;
+    border-left: 2px solid #cbd5e1;
+    padding-left: 12px;
   }
   .hero-cta {
-    margin-top: 20px;
+    margin-top: 24px;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
   }
   .btn {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 10px 22px;
-    border-radius: 6px;
-    font-size: 14px;
+    gap: 8px;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 15px;
     font-weight: 500;
     text-decoration: none;
-    transition: background 0.15s, color 0.15s;
+    transition: all 0.2s ease-in-out;
     cursor: pointer;
   }
   .btn-primary {
-    background: #1a1a1a;
-    color: #fff;
-    border: 1px solid #1a1a1a;
+    background: #1e293b;
+    color: #ffffff;
+    border: 1px solid #1e293b;
   }
-  .btn-primary:hover { background: #333; }
+  .btn-primary:hover {
+    background: #0f172a;
+    border-color: #0f172a;
+  }
   .btn-outline {
-    background: #fff;
-    color: #1a1a1a;
-    border: 1px solid #ccc;
+    background: #ffffff;
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
   }
-  .btn-outline:hover { background: #f0f0f0; }
+  .btn-outline:hover {
+    background: #f8fafc;
+    border-color: #94a3b8;
+  }
 
   /* ── SECTION COMMON ── */
-  .section { padding: 56px 0; border-bottom: 1px solid #e5e5e0; }
+  .section { padding: 72px 0; border-bottom: 1px solid #e2e8f0; }
   .section:last-of-type { border-bottom: none; }
   .section-label {
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: #999;
+    color: #94a3b8;
     margin-bottom: 8px;
   }
   .section-title {
     font-family: 'Noto Serif KR', serif;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
-    color: #111;
-    margin-bottom: 32px;
+    color: #0f172a;
+    margin-bottom: 36px;
   }
 
   /* ── SERVICES ── */
   .cards-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 24px;
   }
   .card {
-    background: #f8f8f5;
-    border: 1px solid #e5e5e0;
-    border-radius: 8px;
-    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 28px 24px;
+    transition: all 0.2s ease-in-out;
+  }
+  .card:hover {
+    border-color: #cbd5e1;
+    background: #f8fafc;
+    transform: translateY(-2px);
   }
   .card-title {
     font-family: 'Noto Serif KR', serif;
-    font-size: 16px;
-    font-weight: 600;
-    color: #111;
-    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
   }
   .card-desc {
-    font-size: 13px;
-    color: #666;
+    font-size: 14px;
+    color: #475569;
     line-height: 1.6;
   }
 
@@ -157,103 +169,113 @@
   .stats-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 24px;
   }
   .stat-card {
-    background: #f8f8f5;
-    border: 1px solid #e5e5e0;
-    border-radius: 8px;
-    padding: 28px 24px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 32px 24px;
     text-align: center;
+    transition: all 0.2s ease-in-out;
+  }
+  .stat-card:hover {
+    border-color: #cbd5e1;
+    background: #f8fafc;
   }
   .stat-number {
     font-family: 'Noto Serif KR', serif;
     font-weight: 700;
-    color: #111;
+    color: #0f172a;
     line-height: 1.2;
   }
   .stat-number-lg { font-size: 26px; }
   .stat-number-md { font-size: 20px; }
   .stat-desc {
-    margin-top: 8px;
-    font-size: 13px;
-    color: #666;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #64748b;
   }
 
   /* ── CAREER ── */
   .career-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    gap: 20px;
   }
   .career-card {
-    background: #f8f8f5;
-    border: 1px solid #e5e5e0;
-    border-radius: 8px;
-    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px 20px;
+    transition: all 0.2s ease-in-out;
+  }
+  .career-card:hover {
+    border-color: #cbd5e1;
+    background: #f8fafc;
   }
   .career-card-title {
     font-family: 'Noto Serif KR', serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: #111;
-    margin-bottom: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
   }
   .career-card-desc {
-    font-size: 12px;
-    color: #777;
-  }
-  .career-subtitle {
     font-size: 13px;
-    color: #888;
-    margin-bottom: 20px;
+    color: #64748b;
+    line-height: 1.5;
   }
 
   /* ── TRACK RECORD ── */
-  .track-list { display: flex; flex-direction: column; gap: 12px; }
+  .track-list { display: flex; flex-direction: column; gap: 16px; }
   .track-item {
     display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 16px 20px;
-    background: #f8f8f5;
-    border: 1px solid #e5e5e0;
-    border-radius: 8px;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    transition: all 0.2s ease-in-out;
+  }
+  .track-item:hover {
+    border-color: #cbd5e1;
+    background: #f8fafc;
   }
   .track-tag {
     flex-shrink: 0;
     font-size: 12px;
     font-weight: 700;
-    color: #fff;
-    background: #1a1a1a;
-    border-radius: 4px;
-    padding: 3px 10px;
+    color: #ffffff;
+    background: #1e293b;
+    border-radius: 6px;
+    padding: 4px 12px;
     white-space: nowrap;
-    margin-top: 1px;
   }
-  .track-content { font-size: 14px; color: #444; line-height: 1.6; }
+  .track-content { font-size: 15px; color: #334155; line-height: 1.6; }
 
   /* ── ACTIVITIES ── */
   .activities-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: 32px;
   }
   .activities-group-label {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #888;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #e5e5e0;
+    color: #475569;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e2e8f0;
   }
   .activities-list { list-style: none; }
   .activities-list li {
     font-size: 14px;
-    color: #444;
-    padding: 6px 0;
-    border-bottom: 1px solid #f0f0ec;
+    color: #334155;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
   }
   .activities-list li:last-child { border-bottom: none; }
 
@@ -261,85 +283,99 @@
   .edu-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: 32px;
   }
   .edu-group-label {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #888;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #e5e5e0;
+    color: #475569;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e2e8f0;
   }
-  .edu-list { display: flex; flex-direction: column; gap: 12px; }
+  .edu-list { display: flex; flex-direction: column; gap: 16px; }
   .edu-item {}
   .edu-school {
-    font-weight: 500;
-    font-size: 14px;
-    color: #111;
+    font-weight: 600;
+    font-size: 15px;
+    color: #0f172a;
   }
   .edu-detail {
     font-size: 13px;
-    color: #666;
-    margin-top: 2px;
+    color: #64748b;
+    margin-top: 4px;
   }
-  .cert-list { display: flex; flex-direction: column; gap: 10px; }
+  .cert-list { display: flex; flex-direction: column; gap: 12px; }
   .cert-item {
     font-size: 14px;
-    color: #444;
-    padding: 8px 14px;
-    background: #f8f8f5;
-    border: 1px solid #e5e5e0;
-    border-radius: 6px;
+    color: #334155;
+    padding: 12px 18px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+  }
+  .cert-item:hover {
+    border-color: #cbd5e1;
+    background: #f8fafc;
   }
 
   /* ── CONTACT ── */
   .contact-section {
-    background: #f8f8f5;
-    padding: 56px 0;
+    background: #f1f5f9;
+    padding: 72px 0;
   }
   .contact-inner { text-align: center; }
-  .contact-inner .section-title { margin-bottom: 8px; }
+  .contact-inner .section-title { margin-bottom: 12px; }
   .contact-sub {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 28px;
+    font-size: 15px;
+    color: #475569;
+    margin-bottom: 32px;
   }
   .contact-btns {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 16px;
   }
 
   /* ── FOOTER ── */
   footer {
     text-align: center;
-    padding: 24px;
-    font-size: 12px;
-    color: #aaa;
-    border-top: 1px solid #e5e5e0;
+    padding: 32px;
+    font-size: 13px;
+    color: #94a3b8;
+    border-top: 1px solid #e2e8f0;
+    background: #ffffff;
   }
 
   /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .container { padding: 0 32px; }
+  }
   @media (max-width: 768px) {
-    .hero-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
-    .cards-grid { grid-template-columns: 1fr; }
-    .stats-grid { grid-template-columns: 1fr 1fr; }
-    .career-grid { grid-template-columns: 1fr 1fr; }
-    .activities-grid { grid-template-columns: 1fr; }
-    .edu-grid { grid-template-columns: 1fr; }
+    .hero-inner { flex-direction: column; align-items: center; text-align: center; gap: 24px; }
+    .hero-slogan { border-left: none; padding-left: 0; }
+    .hero-titles { align-items: center; }
+    .hero-cta { justify-content: center; }
+    .cards-grid { grid-template-columns: 1fr; gap: 16px; }
+    .stats-grid { grid-template-columns: 1fr; gap: 16px; }
+    .career-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .activities-grid { grid-template-columns: 1fr; gap: 24px; }
+    .edu-grid { grid-template-columns: 1fr; gap: 24px; }
   }
   @media (max-width: 480px) {
-    .stats-grid { grid-template-columns: 1fr 1fr; }
-    .career-grid { grid-template-columns: 1fr 1fr; }
-    .section-title { font-size: 18px; }
+    .career-grid { grid-template-columns: 1fr; }
+    .section-title { font-size: 20px; }
+    .hero-name-kr { font-size: 28px; }
+    .hero-title-item { font-size: 18px; }
   }
   @media (max-width: 375px) {
     body { font-size: 14px; }
-    .hero { padding: 40px 0 36px; }
-    .section { padding: 40px 0; }
+    .hero { padding: 56px 0; }
+    .section { padding: 48px 0; }
+    .container { padding: 0 20px; }
   }
 </style>
 </head>
@@ -358,8 +394,8 @@
         <div class="hero-name-kr">문홍배</div>
         <div class="hero-name-en">Moon Hong Bae</div>
         <div class="hero-titles">
-          <span class="hero-title-badge">치원컨설팅 대표</span>
-          <span class="hero-title-badge">상상우리 AI컨설턴트</span>
+          <div class="hero-title-item">치원컨설팅 대표</div>
+          <div class="hero-title-item">상상우리 AI컨설턴트</div>
         </div>
         <p class="hero-slogan">금융 35년, M&amp;A와 전략의 깊이를 더하다</p>
         <div class="hero-cta">
@@ -476,7 +512,7 @@
           <li>평가위원(서울경제진흥원, 경상북도경제진흥원, 서울연구원, 안산시 상권활성화재단)</li>
           <li>멘토(전남으뜸창업, 한국핀테크지원센터)</li>
           <li>춘천시 기업유치위원회 위원</li>
-          <li>대전신보 컨설턴트</li>
+          <li>컨설턴트(대전신보, 한국환경산업기술원)</li>
         </ul>
       </div>
       <div>
